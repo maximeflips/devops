@@ -1,7 +1,7 @@
 db:
   build: ./db/
   ports:
-    - "5432:8432"
+    - "5432:5432"
   volumes:
     - ./db/extension.sql:/docker-entrypoint-initdb.d/extension.sql
     - ./db/country.sql:/docker-entrypoint-initdb.d/country.sql
