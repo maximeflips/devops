@@ -6,6 +6,7 @@ machine:
 
 dependencies:
   pre:
+    - pip install docker-compose
     - pip install awscli
     - docker-compose build
 
