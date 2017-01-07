@@ -20,5 +20,6 @@ deployment:
   hub:
     branch: master
     commands:
-      - $TRIGGER_SERVER
-      - $TRIGGER_DB
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push maximeflips/devops_db
+      - docker push maximeflips/devops_server
