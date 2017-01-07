@@ -1,6 +1,13 @@
 machine:
+  python:
+    version: 2.7.3
   services:
     - docker
+
+dependencies:
+  pre:
+    - pip install awscli
+    - docker-compose build
 
 test:
   override:
@@ -8,3 +15,11 @@ test:
     # wait for postgresql to shutdown
     - while sudo lsof -Pi :5432 -sTCP:LISTEN -t; do sleep 1; done
     - docker-compose up -d
+
+deployment:
+  elasticbeanstalk:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push maximeflips/devops_server:$CIRCLE_SHA1
+      - docker push maximeflips/devops_db:$CIRCLE_SHA1
