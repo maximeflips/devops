@@ -17,7 +17,7 @@ test:
     - docker-compose up -d
 
 deployment:
-  elasticbeanstalk:
+  hub:
     branch: master
     commands:
       - TRIGGER_SERVER
