@@ -47,7 +47,7 @@ make_task_def() {
 	    "environment": [
 	        "POSTGRES_DB": "geo",
 	        "POSTGRES_USER": "Roman",
-	        "POSTGRES_PASSWORD": "",
+	        "POSTGRES_PASSWORD": ""
 	    ],
 	    "portMappings": [
 		{
