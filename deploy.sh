@@ -44,6 +44,11 @@ make_task_def() {
 	{
 	    "name": "db",
 	    "image": "maximeflips/devops_db",
+	    "environment": [
+	        "POSTGRES_DB": "geo",
+	        "POSTGRES_USER": "Roman",
+	        "POSTGRES_PASSWORD": "",
+	    ],
 	    "portMappings": [
 		{
 		    "containerPort": 5432,
