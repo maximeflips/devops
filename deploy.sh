@@ -72,7 +72,7 @@ make_task_def() {
 	}
     ]'
 
-    task_def=$(printf "$task_template" $host_port)
+    task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $CIRCLE_SHA1)
 
 }
 
