@@ -67,8 +67,8 @@ make_task_def() {
 	    "image": "maximeflips/devops_server",
 	    "portMappings": [
 		{
-		    "containerPort": 3000,
-		    "hostPort": 3000
+		    "containerPort": 80,
+		    "hostPort": 80
 		}
 	    ],
 	    "cpu": 10,
