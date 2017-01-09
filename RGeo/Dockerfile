@@ -20,5 +20,4 @@ COPY . /usr/src/app
 EXPOSE 80
 
 # Specify the command to execute to start the container.
-ENTRYPOINT [ "npm", "start" ]
-CMD []
+CMD [ "npm", "start" ]
