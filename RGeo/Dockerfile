@@ -19,8 +19,6 @@ COPY . /usr/src/app
 # Expose the port 3000 which is used by the container.
 EXPOSE 80
 
-RUN if $TEST == "1" then export NODE_ENV=dev fi
-
 # Specify the command to execute to start the container.
 ENTRYPOINT [ "npm", "start" ]
 CMD []
