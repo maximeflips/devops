@@ -8,11 +8,11 @@ test:
     # wait for postgresql to shutdown
     - sudo apt-get update
     - sudo apt-get install -y postgis postgresql-9.6-postgis-2.3
-    - su - postgres < ""
     - createdb geo
     - createuser Roman
     - psql geo < db/extension.sql
     - psql geo < db/country.sql
     - psql geo < db/mig.sql
     - psql geo < db/ne_10m_admin_0_countries_lakes.sql
+    - npm install
     - mocha RGeo
