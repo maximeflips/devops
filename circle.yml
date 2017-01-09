@@ -14,16 +14,14 @@ dependencies:
 
 test:
   override:
-    - sudo service postgresql stop
+    #- sudo service postgresql stop
     # wait for postgresql to shutdown
-    - while sudo lsof -Pi :5432 -sTCP:LISTEN -t; do sleep 1; done
-    - docker-compose up -d
-    #- while ! (sudo lsof -Pi :5432 -sTCP:LISTEN); do sleep 1; done
-
-deployment:
-  hub:
-    branch: master
-    commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker-compose push
-      - ./deploy.sh
+    - sudo apt-get update
+    - sudo apt-get install -y postgis postgresql-9.6-postgis-2.3
+    - su - postgres
+    - createdb geo
+    - createuser Roman
+    - psql geo < db/extension.sql
+    - psql geo < db/country.sql
+    - psql geo < db/mig.sql
+    - psql geo < db/ne_10m_admin_0_countries_lakes.sql
