@@ -8,7 +8,7 @@ test:
     # wait for postgresql to shutdown
     - sudo apt-get update
     - sudo apt-get install -y postgis postgresql-9.6-postgis-2.3
-    - su - postgres
+    - su - postgres < ""
     - createdb geo
     - createuser Roman
     - psql geo < db/extension.sql
