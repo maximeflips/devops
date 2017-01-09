@@ -43,7 +43,7 @@ make_task_def() {
     task_template='[
 	{
 	    "name": "db",
-	    "image": "wuattiroro/devops_db",
+	    "image": "maximeflips/devops_db",
 	    "environment": [
 	        { "name" : "POSTGRES_DB", "value" : "geo" },
             { "name" : "POSTGRES_USER", "value" : "Roman" },
@@ -64,7 +64,7 @@ make_task_def() {
 	    "links": [
 		"db"
 	    ],
-	    "image": "wuattiroro/devops_server",
+	    "image": "maximeflips/devops_server",
 	    "portMappings": [
 		{
 		    "containerPort": 80,
@@ -83,7 +83,7 @@ make_task_def() {
 	    "links": [
 		"db"
 	    ],
-	    "image": "wuattiroro/devops_server",
+	    "image": "maximeflips/devops_server",
 	    "portMappings": [
 		{
 		    "containerPort": 80,
