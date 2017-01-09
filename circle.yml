@@ -14,4 +14,5 @@ test:
     - psql geo < db/country.sql
     - psql geo < db/mig.sql
     - psql geo < db/ne_10m_admin_0_countries_lakes.sql
+    - cd Rgeo && npm install
     - mocha RGeo/test
