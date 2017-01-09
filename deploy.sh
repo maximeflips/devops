@@ -94,7 +94,7 @@ make_task_def() {
 	    "memory": 200,
 	    "essential": true,
 	    "entryPoint": [
-            "NODE_ENV=dev npm start"
+            "NODE_ENV=dev", "npm", "start"
         ]
 	}
     ]'
